@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
+import WhyLuxx from '@/components/WhyLuxx';
+import Testimonials from '@/components/Testimonials';
 import Pricing from '@/components/Pricing';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -20,6 +22,12 @@ const Index = () => {
       </div>
       <div id="portfolio">
         <Portfolio />
+      </div>
+      <div id="why-luxx">
+        <WhyLuxx />
+      </div>
+      <div id="testimonials">
+        <Testimonials />
       </div>
       <div id="pricing">
         <Pricing />
