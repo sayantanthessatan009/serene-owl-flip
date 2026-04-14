@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import GlassCard from './GlassCard';
 
 const projects = [
   {
@@ -43,70 +42,7 @@ const Portfolio = () => {
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ oncethink
-The user wants me to continue the previous response which was cut off.
-The last file being written was `src/components/Portfolio.tsx`.
-I need to finish that file and then continue with the rest of the requested components and pages.
-
-Looking at the previous output:
-```tsx
-<dyad-write path="src/components/Portfolio.tsx" description="Creating the portfolio showcase section">
-"use client";
-
-import React from 'react';
-import { motion } from 'framer-motion';
-import GlassCard from './GlassCard';
-
-const projects = [
-  {
-    title: "Aura Wellness App",
-    category: "Mobile App",
-    image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800",
-    impact: "+45% Bookings"
-  },
-  {
-    title: "Zenith Spa Portal",
-    category: "Web Platform",
-    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800",
-    impact: "2x Client Retention"
-  },
-  {
-    title: "Luxe Retreats",
-    category: "Brand Identity",
-    image: "https://images.unsplash.com/photo-1519415943484-9fa1873496d4?auto=format&fit=crop&q=80&w=800",
-    impact: "Premium Positioning"
-  }
-];
-
-const Portfolio = () => {
-  return (
-    <section className="py-24 bg-luxx-black">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Selected Works</h2>
-            <p className="text-platinum/50">A glimpse into the luxury digital worlds we've built.</p>
-          </div>
-          <div className="h-[1px] flex-grow bg-white/10 mx-8 hidden md:block" />
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once
-```
-
-I will complete `src/components/Portfolio.tsx` and then proceed with:
-- `src/components/Pricing.tsx`
-- `src/components/Contact.tsx`
-- `src/components/Footer.tsx`
-- `src/pages/Index.tsx` (to include all components)
-- `src/components/Navbar.tsx` (for navigation)
-
-I'll start by finishing the `Portfolio.tsx` file.true }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group relative overflow-hidden rounded-2xl aspect-[4/5]"
             >
