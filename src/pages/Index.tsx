@@ -8,6 +8,7 @@ import Portfolio from '@/components/Portfolio';
 import Process from '@/components/Process';
 import WhyLuxx from '@/components/WhyLuxx';
 import Testimonials from '@/components/Testimonials';
+import FAQ from '@/components/FAQ';
 import Pricing from '@/components/Pricing';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -32,6 +33,9 @@ const Index = () => {
       </div>
       <div id="testimonials">
         <Testimonials />
+      </div>
+      <div id="faq">
+        <FAQ />
       </div>
       <div id="pricing">
         <Pricing />

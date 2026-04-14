@@ -18,6 +18,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Services', href: '#services' },
     { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Process', href: '#process' },
     { name: 'Pricing', href: '#pricing' },
   ];
 
@@ -39,9 +40,11 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <LuxxButton variant="outline" className="px-6 py-2 text-sm">
-            Get Started
-          </LuxxButton>
+          <a href="#contact">
+            <LuxxButton variant="outline" className="px-6 py-2 text-sm">
+              Get Started
+            </LuxxButton>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -73,7 +76,9 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <LuxxButton className="w-full">Get Started</LuxxButton>
+              <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <LuxxButton className="w-full">Get Started</LuxxButton>
+              </a>
             </div>
           </motion.div>
         )}
