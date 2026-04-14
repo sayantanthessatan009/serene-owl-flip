@@ -3,6 +3,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import Partners from '@/components/Partners';
 import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
 import Stats from '@/components/Stats';
@@ -14,13 +15,16 @@ import Pricing from '@/components/Pricing';
 import Newsletter from '@/components/Newsletter';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import CustomCursor from '@/components/CustomCursor';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <main className="bg-luxx-black min-h-screen selection:bg-platinum selection:text-black">
+    <main className="bg-luxx-black min-h-screen selection:bg-platinum selection:text-black cursor-none">
+      <CustomCursor />
       <Navbar />
       <Hero />
+      <Partners />
       <div id="services">
         <Services />
       </div>
