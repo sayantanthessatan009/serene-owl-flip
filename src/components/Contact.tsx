@@ -1,11 +1,26 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import LuxxButton from './LuxxButton';
 import { MessageSquare } from 'lucide-react';
+import { showSuccess, showError } from '@/utils/toast';
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    showSuccess("Inquiry sent successfully! We'll be in touch soon.");
+    setIsSubmitting(false);
+    (e.target as HTMLFormElement).reset();
+  };
+
   return (
     <section className="py-24 bg-luxx-black relative overflow-hidden">
       <div className="container mx-auto px-6">
@@ -17,10 +32,11 @@ const Contact = () => {
             <p className="text-platinum/60 text-lg">Book a free consultation to discuss your luxury digital strategy.</p>
           </div>
           
-          <form className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit} className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm text-platinum/60 ml-1">Full Name</label>
               <input 
+                required
                 type="text" 
                 placeholder="John Doe"
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-platinum/50 transition-colors"
@@ -29,6 +45,7 @@ const Contact = () => {
             <div className="space-y-2">
               <label className="text-sm text-platinum/60 ml-1">Business Email</label>
               <input 
+                required
                 type="email" 
                 placeholder="john@luxury-spa.com"
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-platinum/50 transition-colors"
@@ -37,14 +54,19 @@ const Contact = () => {
             <div className="md:col-span-2 space-y-2">
               <label className="text-sm text-platinum/60 ml-1">Message</label>
               <textarea 
+                required
                 rows={4}
                 placeholder="Tell us about your vision..."
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-platinum/50 transition-colors resize-none"
               />
             </div>
             <div className="md:col-span-2 flex justify-center mt-4">
-              <LuxxButton className="w-full md:w-auto px-12">
-                Send Inquiry
+              <LuxxButton 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full md:w-auto px-12"
+              >
+                {isSubmitting ? "Sending..." : "Send Inquiry"}
               </LuxxButton>
             </div>
           </form>
@@ -53,7 +75,9 @@ const Contact = () => {
       
       {/* Floating WhatsApp Button */}
       <motion.a
-        href="#"
+        href="https://wa.me/yournumber"
+        target="_blank"
+        rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className="fixed bottom-8 right-8 w-16 h-16 bg-luxx-black border border-platinum/30 rounded-full flex items-center justify-center shadow-neon-platinum z-50 text-platinum"

@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
+import Process from '@/components/Process';
 import WhyLuxx from '@/components/WhyLuxx';
 import Testimonials from '@/components/Testimonials';
 import Pricing from '@/components/Pricing';
@@ -22,6 +23,9 @@ const Index = () => {
       </div>
       <div id="portfolio">
         <Portfolio />
+      </div>
+      <div id="process">
+        <Process />
       </div>
       <div id="why-luxx">
         <WhyLuxx />
