@@ -50,9 +50,9 @@ const Footer = () => {
           <div>
             <h4 className="text-white font-semibold mb-6">Direct Contact</h4>
             <ul className="space-y-4 text-sm text-platinum/40">
-              <li>sayantan@luxxtexh.com</li>
+              <li>sayantanacharya.work@gmail.com</li>
               <li>Kolkata, West Bengal, India</li>
-              <li>+91 (0) 98765 43210</li>
+              <li>+91 89107 65432</li>
             </ul>
           </div>
         </div>

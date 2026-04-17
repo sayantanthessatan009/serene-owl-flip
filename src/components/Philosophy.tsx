@@ -21,7 +21,7 @@ const Philosophy = () => {
             </h2>
             <div className="mb-8">
               <p className="text-white font-bold text-lg">— Sayantan Acharya</p>
-              <p className="text-platinum/40 text-sm uppercase tracking-widest">CEO & Founder, Luxxtexh</p>
+              <p className="text-platinum/40 text-sm uppercase tracking-widest">Owner & CEO, Luxxtexh</p>
             </div>
             <p className="text-platinum/60 text-lg leading-relaxed mb-8">
               We believe that a brand's digital presence should be a seamless extension of its physical atmosphere. In the world of elite wellness, every touchpoint must evoke a sense of calm, precision, and exclusivity.

@@ -16,7 +16,7 @@ const Contact = () => {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
     
-    showSuccess("Inquiry sent! Sayantan's team will review this personally.");
+    showSuccess("Inquiry sent! Sayantan will review this personally.");
     setIsSubmitting(false);
     (e.target as HTMLFormElement).reset();
   };
@@ -30,7 +30,7 @@ const Contact = () => {
             <div>
               <h2 className="text-3xl font-bold text-white mb-4">Let's Connect</h2>
               <p className="text-platinum/60 leading-relaxed">
-                Ready to scale your wellness brand? Reach out to Sayantan Acharya and his elite team of developers.
+                Ready to scale your wellness brand? Reach out to Sayantan Acharya, Owner & CEO of Luxxtexh.
               </p>
             </div>
             
@@ -41,7 +41,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-xs text-platinum/40 uppercase tracking-widest">Email</p>
-                  <p className="text-sm">sayantan@luxxtexh.com</p>
+                  <p className="text-sm">sayantanacharya.work@gmail.com</p>
                 </div>
               </div>
               
@@ -51,7 +51,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-xs text-platinum/40 uppercase tracking-widest">Location</p>
-                  <p className="text-sm">Kolkata, India</p>
+                  <p className="text-sm">Kolkata, West Bengal</p>
                 </div>
               </div>
             </div>
@@ -105,7 +105,7 @@ const Contact = () => {
       
       {/* Floating WhatsApp Button */}
       <motion.a
-        href="https://wa.me/919876543210"
+        href="https://wa.me/918910765432"
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}
