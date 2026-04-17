@@ -11,6 +11,7 @@ import FeaturedCaseStudy from '@/components/FeaturedCaseStudy';
 import Stats from '@/components/Stats';
 import DigitalEcosystem from '@/components/DigitalEcosystem';
 import LuxuryStandards from '@/components/LuxuryStandards';
+import ClientPortalPreview from '@/components/ClientPortalPreview';
 import Process from '@/components/Process';
 import TechStack from '@/components/TechStack';
 import WhyLuxtexc from '@/components/WhyLuxtexc';
@@ -22,6 +23,7 @@ import Journal from '@/components/Journal';
 import FAQ from '@/components/FAQ';
 import Pricing from '@/components/Pricing';
 import Newsletter from '@/components/Newsletter';
+import InquiryWizard from '@/components/InquiryWizard';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
@@ -51,6 +53,7 @@ const Index = () => {
       <FeaturedCaseStudy />
       <DigitalEcosystem />
       <LuxuryStandards />
+      <ClientPortalPreview />
       <div id="process">
         <Process />
       </div>
@@ -72,6 +75,7 @@ const Index = () => {
         <Pricing />
       </div>
       <Newsletter />
+      <InquiryWizard />
       <div id="contact">
         <Contact />
       </div>
