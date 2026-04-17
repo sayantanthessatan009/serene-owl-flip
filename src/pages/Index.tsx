@@ -10,6 +10,7 @@ import Stats from '@/components/Stats';
 import Process from '@/components/Process';
 import WhyLuxtexc from '@/components/WhyLuxtexc';
 import Philosophy from '@/components/Philosophy';
+import Founder from '@/components/Founder';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Pricing from '@/components/Pricing';
@@ -18,11 +19,13 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
 import ScrollProgress from '@/components/ScrollProgress';
+import GrainEffect from '@/components/GrainEffect';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <main className="bg-luxtexc-black min-h-screen selection:bg-platinum selection:text-black cursor-none">
+    <main className="bg-luxtexc-black min-h-screen selection:bg-platinum selection:text-black cursor-none relative">
+      <GrainEffect />
       <ScrollProgress />
       <CustomCursor />
       <Navbar />
@@ -42,6 +45,7 @@ const Index = () => {
         <WhyLuxtexc />
       </div>
       <Philosophy />
+      <Founder />
       <div id="testimonials">
         <Testimonials />
       </div>
