@@ -13,11 +13,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="py-16 bg-luxx-black border-t border-white/5">
+    <footer className="py-16 bg-luxtexc-black border-t border-white/5">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold text-white tracking-tighter mb-4">LUXXTEXH</h2>
+            <h2 className="text-2xl font-bold text-white tracking-tighter mb-4">LUXTEXC</h2>
             <p className="text-platinum/40 text-sm max-w-xs leading-relaxed">
               Led by Sayantan Acharya, we craft high-end digital experiences for elite wellness brands. Elevate your presence, maximize your bookings.
             </p>
@@ -59,7 +59,7 @@ const Footer = () => {
         
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-platinum/20 text-xs">
-            © {new Date().getFullYear()} Luxxtexh. All rights reserved.
+            © {new Date().getFullYear()} Luxtexc. All rights reserved.
           </div>
           <div className="flex gap-6 text-xs text-platinum/20">
             <a href="#" className="hover:text-platinum/40 transition-colors">Privacy Policy</a>

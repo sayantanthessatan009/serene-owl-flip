@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Philosophy = () => {
   return (
-    <section className="py-24 bg-luxx-black relative overflow-hidden">
+    <section className="py-24 bg-luxtexc-black relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <motion.div 
@@ -21,7 +21,7 @@ const Philosophy = () => {
             </h2>
             <div className="mb-8">
               <p className="text-white font-bold text-lg">— Sayantan Acharya</p>
-              <p className="text-platinum/40 text-sm uppercase tracking-widest">Owner & CEO, Luxxtexh</p>
+              <p className="text-platinum/40 text-sm uppercase tracking-widest">Owner & CEO, Luxtexc</p>
             </div>
             <p className="text-platinum/60 text-lg leading-relaxed mb-8">
               We believe that a brand's digital presence should be a seamless extension of its physical atmosphere. In the world of elite wellness, every touchpoint must evoke a sense of calm, precision, and exclusivity.

@@ -8,7 +8,7 @@ import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
 import Stats from '@/components/Stats';
 import Process from '@/components/Process';
-import WhyLuxx from '@/components/WhyLuxx';
+import WhyLuxtexc from '@/components/WhyLuxtexc';
 import Philosophy from '@/components/Philosophy';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
@@ -22,7 +22,7 @@ import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <main className="bg-luxx-black min-h-screen selection:bg-platinum selection:text-black cursor-none">
+    <main className="bg-luxtexc-black min-h-screen selection:bg-platinum selection:text-black cursor-none">
       <ScrollProgress />
       <CustomCursor />
       <Navbar />
@@ -38,8 +38,8 @@ const Index = () => {
       <div id="process">
         <Process />
       </div>
-      <div id="why-luxx">
-        <WhyLuxx />
+      <div id="why-luxtexc">
+        <WhyLuxtexc />
       </div>
       <Philosophy />
       <div id="testimonials">

@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-luxx-black z-0" />
+      <div className="absolute inset-0 bg-luxtexc-black z-0" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-platinum/5 rounded-full blur-[120px] animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px]" />
       

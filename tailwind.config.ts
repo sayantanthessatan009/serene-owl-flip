@@ -29,7 +29,7 @@ export default {
           glow: "rgba(229, 228, 226, 0.4)",
           neon: "#D1D5DB",
         },
-        luxx: {
+        luxtexc: {
           black: "#0A0A0A",
           graphite: "#1A1A1A",
           silver: "#C0C0C0",

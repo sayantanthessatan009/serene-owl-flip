@@ -22,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-24 bg-luxx-black relative overflow-hidden">
+    <section className="py-24 bg-luxtexc-black relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Info Sidebar */}
@@ -30,7 +30,7 @@ const Contact = () => {
             <div>
               <h2 className="text-3xl font-bold text-white mb-4">Let's Connect</h2>
               <p className="text-platinum/60 leading-relaxed">
-                Ready to scale your wellness brand? Reach out to Sayantan Acharya, Owner & CEO of Luxxtexh.
+                Ready to scale your wellness brand? Reach out to Sayantan Acharya, Owner & CEO of Luxtexc.
               </p>
             </div>
             
@@ -110,7 +110,7 @@ const Contact = () => {
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-8 right-8 w-16 h-16 bg-luxx-black border border-platinum/30 rounded-full flex items-center justify-center shadow-neon-platinum z-50 text-platinum"
+        className="fixed bottom-8 right-8 w-16 h-16 bg-luxtexc-black border border-platinum/30 rounded-full flex items-center justify-center shadow-neon-platinum z-50 text-platinum"
       >
         <MessageSquare size={24} />
       </motion.a>

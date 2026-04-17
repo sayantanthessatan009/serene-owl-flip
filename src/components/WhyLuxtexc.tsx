@@ -27,9 +27,9 @@ const features = [
   }
 ];
 
-const WhyLuxx = () => {
+const WhyLuxtexc = () => {
   return (
-    <section className="py-24 bg-luxx-black relative overflow-hidden">
+    <section className="py-24 bg-luxtexc-black relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -40,7 +40,7 @@ const WhyLuxx = () => {
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Why Elite Brands <br />
-              <span className="text-platinum">Choose Luxxtexh</span>
+              <span className="text-platinum">Choose Luxtexc</span>
             </h2>
             <p className="text-platinum/60 text-lg mb-8 leading-relaxed">
               We bridge the gap between high-end wellness and cutting-edge technology. Our mission is to ensure your digital presence is as luxurious as your service.
@@ -75,7 +75,7 @@ const WhyLuxx = () => {
                 alt="Luxury Spa Interior" 
                 className="w-full h-full object-cover rounded-[22px] opacity-60 grayscale hover:grayscale-0 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-luxx-black/40" />
+              <div className="absolute inset-0 bg-luxtexc-black/40" />
               <div className="absolute bottom-8 left-8 right-8 p-6 rounded-2xl border border-white/10 bg-black/60 backdrop-blur-md">
                 <div className="text-platinum font-bold text-2xl mb-1">98%</div>
                 <div className="text-platinum/60 text-sm">Client Satisfaction Rate</div>
@@ -88,4 +88,4 @@ const WhyLuxx = () => {
   );
 };
 
-export default WhyLuxx;
+export default WhyLuxtexc;
