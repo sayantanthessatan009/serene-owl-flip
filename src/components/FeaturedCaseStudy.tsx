@@ -52,7 +52,7 @@ const FeaturedCaseStudy = () => {
                 <div className="text-platinum/40 text-xs uppercase tracking-widest">Client Retention</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-white"><1s</div>
+                <div className="text-3xl font-bold text-white">{"<1s"}</div>
                 <div className="text-platinum/40 text-xs uppercase tracking-widest">Load Time</div>
               </div>
             </div>
