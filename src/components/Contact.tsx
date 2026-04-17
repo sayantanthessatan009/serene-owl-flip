@@ -41,7 +41,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-xs text-platinum/40 uppercase tracking-widest">Email</p>
-                  <p className="text-sm">sayantanacharya.work@gmail.com</p>
+                  <p className="text-sm">acharyasayantan716@gmail.com</p>
                 </div>
               </div>
               
@@ -105,7 +105,7 @@ const Contact = () => {
       
       {/* Floating WhatsApp Button */}
       <motion.a
-        href="https://wa.me/918910765432"
+        href="https://wa.me/918777319551"
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}
