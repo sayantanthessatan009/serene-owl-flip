@@ -6,13 +6,15 @@ import Hero from '@/components/Hero';
 import Partners from '@/components/Partners';
 import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
+import FeaturedCaseStudy from '@/components/FeaturedCaseStudy';
 import Stats from '@/components/Stats';
+import DigitalEcosystem from '@/components/DigitalEcosystem';
+import LuxuryStandards from '@/components/LuxuryStandards';
 import Process from '@/components/Process';
+import TechStack from '@/components/TechStack';
 import WhyLuxtexc from '@/components/WhyLuxtexc';
 import Philosophy from '@/components/Philosophy';
 import Founder from '@/components/Founder';
-import DigitalEcosystem from '@/components/DigitalEcosystem';
-import TechStack from '@/components/TechStack';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Pricing from '@/components/Pricing';
@@ -40,7 +42,9 @@ const Index = () => {
       <div id="portfolio">
         <Portfolio />
       </div>
+      <FeaturedCaseStudy />
       <DigitalEcosystem />
+      <LuxuryStandards />
       <div id="process">
         <Process />
       </div>

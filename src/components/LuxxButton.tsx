@@ -21,13 +21,19 @@ const LuxxButton = ({ children, variant = 'primary', className, ...props }: Luxx
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={cn(
-        "px-8 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2",
+        "relative overflow-hidden px-8 py-3 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 group",
         variants[variant],
         className
       )}
       {...props}
     >
-      {children}
+      {/* Shimmer Effect for Primary Variant */}
+      {variant === 'primary' && (
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none" />
+      )}
+      <span className="relative z-10 flex items-center gap-2">
+        {children}
+      </span>
     </motion.button>
   );
 };
