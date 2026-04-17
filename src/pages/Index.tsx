@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Partners from '@/components/Partners';
 import Services from '@/components/Services';
+import ServiceCapabilities from '@/components/ServiceCapabilities';
 import Portfolio from '@/components/Portfolio';
 import FeaturedCaseStudy from '@/components/FeaturedCaseStudy';
 import Stats from '@/components/Stats';
@@ -24,11 +25,13 @@ import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
 import ScrollProgress from '@/components/ScrollProgress';
 import GrainEffect from '@/components/GrainEffect';
+import Preloader from '@/components/Preloader';
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
     <main className="bg-luxtexc-black min-h-screen selection:bg-platinum selection:text-black cursor-none relative">
+      <Preloader />
       <GrainEffect />
       <ScrollProgress />
       <CustomCursor />
@@ -38,6 +41,7 @@ const Index = () => {
       <div id="services">
         <Services />
       </div>
+      <ServiceCapabilities />
       <Stats />
       <div id="portfolio">
         <Portfolio />
