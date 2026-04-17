@@ -11,6 +11,8 @@ import Process from '@/components/Process';
 import WhyLuxtexc from '@/components/WhyLuxtexc';
 import Philosophy from '@/components/Philosophy';
 import Founder from '@/components/Founder';
+import DigitalEcosystem from '@/components/DigitalEcosystem';
+import TechStack from '@/components/TechStack';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Pricing from '@/components/Pricing';
@@ -38,9 +40,11 @@ const Index = () => {
       <div id="portfolio">
         <Portfolio />
       </div>
+      <DigitalEcosystem />
       <div id="process">
         <Process />
       </div>
+      <TechStack />
       <div id="why-luxtexc">
         <WhyLuxtexc />
       </div>
