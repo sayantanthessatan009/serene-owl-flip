@@ -16,7 +16,9 @@ import TechStack from '@/components/TechStack';
 import WhyLuxtexc from '@/components/WhyLuxtexc';
 import Philosophy from '@/components/Philosophy';
 import Founder from '@/components/Founder';
+import GlobalPresence from '@/components/GlobalPresence';
 import Testimonials from '@/components/Testimonials';
+import Journal from '@/components/Journal';
 import FAQ from '@/components/FAQ';
 import Pricing from '@/components/Pricing';
 import Newsletter from '@/components/Newsletter';
@@ -58,9 +60,11 @@ const Index = () => {
       </div>
       <Philosophy />
       <Founder />
+      <GlobalPresence />
       <div id="testimonials">
         <Testimonials />
       </div>
+      <Journal />
       <div id="faq">
         <FAQ />
       </div>
