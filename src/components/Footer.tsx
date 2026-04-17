@@ -19,13 +19,13 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold text-white tracking-tighter mb-4">LUXXTEXH</h2>
             <p className="text-platinum/40 text-sm max-w-xs leading-relaxed">
-              Crafting high-end digital experiences for elite wellness brands. Elevate your presence, maximize your bookings.
+              Led by Sayantan Acharya, we craft high-end digital experiences for elite wellness brands. Elevate your presence, maximize your bookings.
             </p>
             <div className="flex gap-4 mt-6">
               <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-platinum/60 hover:text-white hover:border-white/30 transition-all">
                 <Instagram size={18} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-platinum/60 hover:text-white hover:border-white/30 transition-all">
+              <a href="https://linkedin.com/in/sayantan-acharya" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-platinum/60 hover:text-white hover:border-white/30 transition-all">
                 <Linkedin size={18} />
               </a>
               <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-platinum/60 hover:text-white hover:border-white/30 transition-all">
@@ -48,11 +48,11 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-white font-semibold mb-6">Contact</h4>
+            <h4 className="text-white font-semibold mb-6">Direct Contact</h4>
             <ul className="space-y-4 text-sm text-platinum/40">
-              <li>hello@luxxtexh.com</li>
-              <li>London, United Kingdom</li>
-              <li>+44 (0) 20 1234 5678</li>
+              <li>sayantan@luxxtexh.com</li>
+              <li>Kolkata, West Bengal, India</li>
+              <li>+91 (0) 98765 43210</li>
             </ul>
           </div>
         </div>
