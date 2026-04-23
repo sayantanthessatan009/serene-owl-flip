@@ -4,18 +4,47 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar as CalendarIcon, Clock } from 'lucide-react';
 import LuxxButton from './LuxxButton';
-import { showSuccess } from '@/utils/toast';
+import { showSuccess, showError } from '@/utils/toast';
 
 const Booking = () => {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const dates = ["Oct 24", "Oct 25", "Oct 26", "Oct 27", "Oct 28"];
   const times = ["10:00 AM", "11:30 AM", "02:00 PM", "04:30 PM"];
 
-  const handleBook = () => {
-    if (selectedDate && selectedTime) {
-      showSuccess(`Consultation scheduled for ${selectedDate} at ${selectedTime}.`);
+  const handleBook = async () => {
+    if (!selectedDate || !selectedTime) return;
+    
+    setIsSubmitting(true);
+
+    const formData = new FormData();
+    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY"); // Replace with your actual key
+    formData.append("date", selectedDate);
+    formData.append("time", selectedTime);
+    formData.append("from_name", "LUXTEXC-REGISTRATION");
+    formData.append("subject", "New Strategy Session Booking - LUXTEXC");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        showSuccess(`Consultation scheduled for ${selectedDate} at ${selectedTime}.`);
+        setSelectedDate(null);
+        setSelectedTime(null);
+      } else {
+        showError("Booking failed. Please try again.");
+      }
+    } catch (error) {
+      showError("Connection error. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -78,11 +107,11 @@ const Booking = () => {
 
           <div className="mt-12 flex flex-col items-center">
             <LuxxButton 
-              disabled={!selectedDate || !selectedTime}
+              disabled={!selectedDate || !selectedTime || isSubmitting}
               onClick={handleBook}
               className="w-full md:w-auto px-12"
             >
-              Confirm Strategy Session
+              {isSubmitting ? "Booking..." : "Confirm Strategy Session"}
             </LuxxButton>
             <p className="text-platinum/20 text-[10px] uppercase tracking-widest mt-6">
               Limited availability for Q4 2023

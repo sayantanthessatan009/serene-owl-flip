@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import LuxxButton from './LuxxButton';
 import { ChevronRight, ChevronLeft, Check, Sparkles } from 'lucide-react';
-import { showSuccess } from '@/utils/toast';
+import { showSuccess, showError } from '@/utils/toast';
 
 const steps = [
   {
@@ -31,6 +31,7 @@ const InquiryWizard = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [selections, setSelections] = useState<Record<string, string>>({});
   const [isComplete, setIsComplete] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSelect = (option: string) => {
     setSelections({ ...selections, [steps[currentStep].id]: option });
@@ -47,9 +48,38 @@ const InquiryWizard = () => {
     setIsComplete(false);
   };
 
-  const handleSubmit = () => {
-    showSuccess("Concierge inquiry received. Sayantan will reach out shortly.");
-    handleReset();
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    
+    const formData = new FormData();
+    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY"); // Replace with your actual key
+    formData.append("from_name", "LUXTEXC-REGISTRATION");
+    formData.append("subject", "New Concierge Inquiry - LUXTEXC");
+    
+    // Add selections to form data
+    Object.entries(selections).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        showSuccess("Concierge inquiry received. Sayantan will reach out shortly.");
+        handleReset();
+      } else {
+        showError("Submission failed. Please try again.");
+      }
+    } catch (error) {
+      showError("Connection error. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -146,9 +176,9 @@ const InquiryWizard = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <LuxxButton onClick={handleSubmit}>
-                    Finalize Inquiry
-                    <ChevronRight size={18} />
+                  <LuxxButton onClick={handleSubmit} disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Finalize Inquiry"}
+                    {!isSubmitting && <ChevronRight size={18} />}
                   </LuxxButton>
                   <button 
                     onClick={handleReset}

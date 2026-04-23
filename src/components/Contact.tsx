@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import LuxxButton from './LuxxButton';
 import { MessageSquare, Mail, MapPin } from 'lucide-react';
-import { showSuccess } from '@/utils/toast';
+import { showSuccess, showError } from '@/utils/toast';
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -13,12 +13,30 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    showSuccess("Inquiry sent! Sayantan will review this personally.");
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    const formData = new FormData(e.target as HTMLFormElement);
+    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY"); // Replace with your actual key
+    formData.append("from_name", "LUXTEXC-REGISTRATION");
+    formData.append("subject", "New Contact Inquiry - LUXTEXC");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        showSuccess("Inquiry sent! Sayantan will review this personally.");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        showError("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      showError("Failed to send message. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -66,6 +84,7 @@ const Contact = () => {
                 <label className="text-sm text-platinum/60 ml-1">Full Name</label>
                 <input 
                   required
+                  name="name"
                   type="text" 
                   placeholder="John Doe"
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-platinum/50 transition-colors"
@@ -75,6 +94,7 @@ const Contact = () => {
                 <label className="text-sm text-platinum/60 ml-1">Business Email</label>
                 <input 
                   required
+                  name="email"
                   type="email" 
                   placeholder="john@luxury-spa.com"
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-platinum/50 transition-colors"
@@ -84,6 +104,7 @@ const Contact = () => {
                 <label className="text-sm text-platinum/60 ml-1">Message</label>
                 <textarea 
                   required
+                  name="message"
                   rows={4}
                   placeholder="Tell Sayantan about your vision..."
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-platinum/50 transition-colors resize-none"
