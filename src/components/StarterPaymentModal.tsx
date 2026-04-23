@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import LuxxButton from './LuxxButton';
-import { X, Smartphone, CheckCircle2, ExternalLink } from 'lucide-react';
+import { X, CheckCircle2, Copy, ExternalLink } from 'lucide-react';
 
 interface StarterPaymentModalProps {
   isOpen: boolean;
@@ -16,6 +16,8 @@ interface StarterPaymentModalProps {
 }
 
 const StarterPaymentModal = ({ isOpen, onClose }: StarterPaymentModalProps) => {
+  const [copied, setCopied] = useState(false);
+
   const steps = [
     "Open Paytm app on your phone",
     "Tap \"Pay\" on the home screen",
@@ -25,8 +27,10 @@ const StarterPaymentModal = ({ isOpen, onClose }: StarterPaymentModalProps) => {
     "Tap Pay & confirm"
   ];
 
-  const handleOpenPaytm = () => {
-    window.location.href = "paytmmp://";
+  const handleCopy = () => {
+    navigator.clipboard.writeText("8777319551");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -72,15 +76,31 @@ const StarterPaymentModal = ({ isOpen, onClose }: StarterPaymentModalProps) => {
               ))}
             </div>
 
-            {/* Action */}
-            <div className="pt-4 space-y-4 text-center">
-              <LuxxButton onClick={handleOpenPaytm} className="w-full py-4 text-lg shadow-neon-platinum">
-                <Smartphone size={20} />
-                Open Paytm App
-              </LuxxButton>
-              <p className="text-[10px] text-platinum/30 uppercase tracking-widest">
-                Or manually open Paytm and follow steps above
-              </p>
+            {/* Actions */}
+            <div className="pt-4 space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <a 
+                  href="https://paytm.com/pay/8777319551" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-white text-black font-bold py-3 rounded-full hover:bg-platinum transition-colors text-sm"
+                >
+                  Pay via Paytm
+                  <ExternalLink size={14} />
+                </a>
+                <button 
+                  onClick={handleCopy}
+                  className="flex items-center justify-center gap-2 border border-white text-white font-bold py-3 rounded-full hover:bg-white/10 transition-colors text-sm"
+                >
+                  {copied ? "Copied ✓" : "Copy Number"}
+                  {!copied && <Copy size={14} />}
+                </button>
+              </div>
+              <div className="text-center">
+                <p className="text-[10px] text-platinum/30 uppercase tracking-widest">
+                  Open Paytm → Tap Pay → Search 8777319551
+                </p>
+              </div>
             </div>
 
             <div className="flex items-center justify-center gap-2 text-platinum/20">
