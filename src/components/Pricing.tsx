@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import GlassCard from './GlassCard';
 import LuxxButton from './LuxxButton';
 import StarterPaymentModal from './StarterPaymentModal';
+import GrowthPaymentModal from './GrowthPaymentModal';
 import { Check } from 'lucide-react';
 
 const plans = [
@@ -16,7 +17,7 @@ const plans = [
   },
   {
     name: "Growth",
-    price: "Custom",
+    price: "₹20,000",
     description: "Advanced systems for growing wellness businesses.",
     features: ["Everything in Starter", "Custom Booking System", "Client CRM", "WhatsApp Automation"],
     highlight: true
@@ -32,6 +33,15 @@ const plans = [
 
 const Pricing = () => {
   const [isStarterModalOpen, setIsStarterModalOpen] = useState(false);
+  const [isGrowthModalOpen, setIsGrowthModalOpen] = useState(false);
+
+  const handlePlanClick = (planName: string) => {
+    if (planName === "Starter") {
+      setIsStarterModalOpen(true);
+    } else if (planName === "Growth") {
+      setIsGrowthModalOpen(true);
+    }
+  };
 
   return (
     <section className="py-24 bg-luxx-black relative">
@@ -66,9 +76,9 @@ const Pricing = () => {
               <LuxxButton 
                 variant={plan.highlight ? "primary" : "outline"} 
                 className="w-full"
-                onClick={() => plan.name === "Starter" ? setIsStarterModalOpen(true) : null}
+                onClick={() => handlePlanClick(plan.name)}
               >
-                {plan.name === "Starter" ? "Pay Now" : "Inquire Now"}
+                {plan.name === "Starter" ? "Pay Now" : plan.name === "Growth" ? "Advance Book Now" : "Inquire Now"}
               </LuxxButton>
             </GlassCard>
           ))}
@@ -78,6 +88,10 @@ const Pricing = () => {
       <StarterPaymentModal 
         isOpen={isStarterModalOpen} 
         onClose={() => setIsStarterModalOpen(false)} 
+      />
+      <GrowthPaymentModal 
+        isOpen={isGrowthModalOpen} 
+        onClose={() => setIsGrowthModalOpen(false)} 
       />
     </section>
   );
