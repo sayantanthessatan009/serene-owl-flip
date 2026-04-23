@@ -1,14 +1,15 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import GlassCard from './GlassCard';
 import LuxxButton from './LuxxButton';
+import StarterPaymentModal from './StarterPaymentModal';
 import { Check } from 'lucide-react';
 
 const plans = [
   {
     name: "Starter",
-    price: "Custom",
+    price: "₹7,000",
     description: "Perfect for boutique spas establishing their digital presence.",
     features: ["Premium Website Design", "SEO Optimization", "Mobile Responsive", "Contact Form Integration"],
     highlight: false
@@ -30,6 +31,8 @@ const plans = [
 ];
 
 const Pricing = () => {
+  const [isStarterModalOpen, setIsStarterModalOpen] = useState(false);
+
   return (
     <section className="py-24 bg-luxx-black relative">
       <div className="container mx-auto px-6">
@@ -63,13 +66,19 @@ const Pricing = () => {
               <LuxxButton 
                 variant={plan.highlight ? "primary" : "outline"} 
                 className="w-full"
+                onClick={() => plan.name === "Starter" ? setIsStarterModalOpen(true) : null}
               >
-                Inquire Now
+                {plan.name === "Starter" ? "Pay Now" : "Inquire Now"}
               </LuxxButton>
             </GlassCard>
           ))}
         </div>
       </div>
+
+      <StarterPaymentModal 
+        isOpen={isStarterModalOpen} 
+        onClose={() => setIsStarterModalOpen(false)} 
+      />
     </section>
   );
 };
