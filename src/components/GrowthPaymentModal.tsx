@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Dialog,
   DialogContent,
@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import LuxxButton from './LuxxButton';
-import { X, CreditCard, Smartphone } from 'lucide-react';
+import { X, Smartphone, CheckCircle2, Info } from 'lucide-react';
 
 interface GrowthPaymentModalProps {
   isOpen: boolean;
@@ -16,100 +16,92 @@ interface GrowthPaymentModalProps {
 }
 
 const GrowthPaymentModal = ({ isOpen, onClose }: GrowthPaymentModalProps) => {
-  const [customerName, setCustomerName] = useState("");
-  const [note, setNote] = useState("Growth Plan Advance - LUXTEXC");
+  const steps = [
+    "Open Paytm app on your phone",
+    "Tap \"Pay\" on the home screen",
+    "Search by mobile number: 8777319551",
+    "Enter amount: ₹5,000",
+    "Add note: Growth Plan Advance - LUXTEXC",
+    "Tap Pay & confirm"
+  ];
 
-  const paytmLink = `paytmmp://pay?pa=8777319551&pn=Sayantan%20Acharya&am=5000&cu=INR&tn=${encodeURIComponent(note)}`;
-
-  const handlePayment = () => {
-    window.location.href = paytmLink;
+  const handleOpenPaytm = () => {
+    window.location.href = "paytmmp://";
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="bg-luxtexc-black border border-white/10 text-white max-w-md rounded-3xl p-0 overflow-hidden">
         <div className="p-8">
-          <DialogHeader className="mb-6">
+          <DialogHeader className="mb-8">
             <div className="flex justify-between items-center">
-              <div>
-                <DialogTitle className="text-2xl font-bold tracking-tight">Growth Plan — Advance Booking</DialogTitle>
-                <p className="text-platinum/40 text-xs mt-2">Full Plan: ₹20,000 | Pay Now: ₹5,000 Advance</p>
-              </div>
+              <DialogTitle className="text-2xl font-bold tracking-tight">Growth Plan — Advance Booking</DialogTitle>
               <button onClick={onClose} className="text-platinum/40 hover:text-white transition-colors">
                 <X size={24} />
               </button>
             </div>
           </DialogHeader>
 
-          <div className="space-y-6">
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/5">
-              <p className="text-platinum/40 text-xs uppercase tracking-widest mb-1">Receiver</p>
-              <p className="text-lg font-semibold">Sayantan Acharya</p>
+          <div className="space-y-8">
+            {/* Summary Box */}
+            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-platinum/40 text-xs uppercase tracking-widest">Advance Amount</span>
+                <span className="text-xl font-bold text-white">₹5,000</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-platinum/40 text-xs uppercase tracking-widest">Full Plan Value</span>
+                <span className="text-sm font-medium">₹20,000</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-platinum/40 text-xs uppercase tracking-widest">Remaining After Booking</span>
+                <span className="text-sm font-medium text-platinum">₹15,000</span>
+              </div>
+              <div className="pt-2 border-t border-white/5 flex justify-between items-center">
+                <span className="text-platinum/40 text-xs uppercase tracking-widest">Pay To</span>
+                <span className="text-sm font-medium">Sayantan Acharya</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-platinum/40 text-xs uppercase tracking-widest">Paytm Number</span>
+                <span className="text-sm font-medium">+91 8777319551</span>
+              </div>
             </div>
 
+            {/* Steps */}
             <div className="space-y-4">
-              <div className="space-y-2">
-                <label className="text-sm text-platinum/60 ml-1">Advance Amount (Locked)</label>
-                <div className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white font-bold text-xl">
-                  ₹5,000
+              <p className="text-platinum/40 text-[10px] uppercase tracking-[0.2em] font-bold mb-4">Follow these steps</p>
+              {steps.map((step, index) => (
+                <div key={index} className="flex items-start gap-4 group">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/10 border border-white/10 flex items-center justify-center text-[10px] font-bold text-platinum group-hover:border-platinum/50 transition-colors">
+                    {index + 1}
+                  </div>
+                  <p className="text-sm text-platinum/80 leading-tight pt-0.5">{step}</p>
                 </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm text-platinum/60 ml-1">Your Name</label>
-                <input 
-                  type="text" 
-                  value={customerName}
-                  onChange={(e) => setCustomerName(e.target.value)}
-                  placeholder="Enter your name"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-platinum/50 transition-colors"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm text-platinum/60 ml-1">Note</label>
-                <input 
-                  type="text" 
-                  value={note}
-                  onChange={(e) => setNote(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-platinum/50 transition-colors"
-                />
-              </div>
+              ))}
             </div>
 
-            <div className="py-6 border-y border-white/5 space-y-3">
-              <div className="flex justify-between text-sm">
-                <span className="text-platinum/40">Advance</span>
-                <span className="font-medium text-platinum">₹5,000</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-platinum/40">Full Plan</span>
-                <span className="font-medium">₹20,000</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-platinum/40">Remaining</span>
-                <span className="font-medium text-white">₹15,000 due before project start</span>
-              </div>
-              <div className="flex justify-between text-sm pt-2">
-                <span className="text-platinum/40">Pay To</span>
-                <span className="font-medium">Sayantan Acharya</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-platinum/40">Paytm Number</span>
-                <span className="font-medium">+91 8777319551</span>
-              </div>
-            </div>
-
-            <LuxxButton onClick={handlePayment} className="w-full py-4 text-lg">
-              <CreditCard size={20} />
-              Pay Advance via Paytm
-            </LuxxButton>
-
-            <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/5">
-              <Smartphone size={16} className="text-platinum/40 mt-0.5 flex-shrink-0" />
-              <p className="text-[10px] text-platinum/40 leading-relaxed uppercase tracking-wider">
-                Open Paytm and send ₹5,000 to mobile number 8777319551 if button doesn't redirect automatically.
+            {/* Action */}
+            <div className="pt-4 space-y-4 text-center">
+              <LuxxButton onClick={handleOpenPaytm} className="w-full py-4 text-lg shadow-neon-platinum">
+                <Smartphone size={20} />
+                Open Paytm App
+              </LuxxButton>
+              <p className="text-[10px] text-platinum/30 uppercase tracking-widest">
+                Or manually open Paytm and follow steps above
               </p>
+            </div>
+
+            {/* Notice */}
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/5">
+              <Info size={16} className="text-platinum/40 mt-0.5 flex-shrink-0" />
+              <p className="text-[10px] text-platinum/40 leading-relaxed uppercase tracking-wider">
+                This advance secures your Growth Plan booking. Remaining ₹15,000 due before project start.
+              </p>
+            </div>
+
+            <div className="flex items-center justify-center gap-2 text-platinum/20">
+              <CheckCircle2 size={12} />
+              <span className="text-[10px] uppercase tracking-widest">Secure Advance via Paytm</span>
             </div>
           </div>
         </div>
