@@ -20,7 +20,7 @@ const Booking = () => {
     setIsSubmitting(true);
 
     const formData = new FormData();
-    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY"); // Replace with your actual key
+    formData.append("access_key", "ce9f7557-639f-4cf4-bcf9-9e4174a8cfce");
     formData.append("date", selectedDate);
     formData.append("time", selectedTime);
     formData.append("from_name", "LUXTEXC-REGISTRATION");
