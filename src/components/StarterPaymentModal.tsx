@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import LuxxButton from './LuxxButton';
-import { X, ShieldCheck, CreditCard } from 'lucide-react';
+import { X, ShieldCheck, CreditCard, Smartphone } from 'lucide-react';
 
 interface StarterPaymentModalProps {
   isOpen: boolean;
@@ -19,7 +19,8 @@ const StarterPaymentModal = ({ isOpen, onClose }: StarterPaymentModalProps) => {
   const [customerName, setCustomerName] = useState("");
   const [note, setNote] = useState("Starter Plan - LUXTEXC");
 
-  const paytmLink = `paytmmp://pay?pa=8777319551@paytm&pn=Sayantan%20Acharya&am=7000&cu=INR&tn=${encodeURIComponent(note)}&mc=IN`;
+  // Exact link as requested
+  const paytmLink = `paytmmp://pay?pa=8777319551&pn=Sayantan%20Acharya&am=7000&cu=INR&tn=${encodeURIComponent(note)}`;
 
   const handlePayment = () => {
     window.location.href = paytmLink;
@@ -64,7 +65,7 @@ const StarterPaymentModal = ({ isOpen, onClose }: StarterPaymentModalProps) => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm text-platinum/60 ml-1">Note (Optional)</label>
+                <label className="text-sm text-platinum/60 ml-1">Note</label>
                 <input 
                   type="text" 
                   value={note}
@@ -80,16 +81,12 @@ const StarterPaymentModal = ({ isOpen, onClose }: StarterPaymentModalProps) => {
                 <span className="font-medium">₹7,000</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-platinum/40">To</span>
+                <span className="text-platinum/40">Pay To</span>
                 <span className="font-medium">Sayantan Acharya</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-platinum/40">UPI ID</span>
-                <span className="font-medium">8777319551@paytm</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-platinum/40">Country</span>
-                <span className="font-medium">India (+91)</span>
+                <span className="text-platinum/40">Paytm Number</span>
+                <span className="font-medium">+91 8777319551</span>
               </div>
             </div>
 
@@ -98,9 +95,11 @@ const StarterPaymentModal = ({ isOpen, onClose }: StarterPaymentModalProps) => {
               Pay via Paytm
             </LuxxButton>
 
-            <div className="flex items-center justify-center gap-2 text-[10px] text-platinum/20 uppercase tracking-widest">
-              <ShieldCheck size={12} />
-              <span>Secured Paytm Wallet Payment · India</span>
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/5">
+              <Smartphone size={16} className="text-platinum/40 mt-0.5 flex-shrink-0" />
+              <p className="text-[10px] text-platinum/40 leading-relaxed uppercase tracking-wider">
+                Open Paytm and send ₹7,000 to mobile number 8777319551 if button doesn't redirect automatically.
+              </p>
             </div>
           </div>
         </div>
