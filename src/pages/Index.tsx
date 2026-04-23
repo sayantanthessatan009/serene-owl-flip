@@ -17,6 +17,8 @@ import TechStack from '@/components/TechStack';
 import WhyLuxtexc from '@/components/WhyLuxtexc';
 import Philosophy from '@/components/Philosophy';
 import Founder from '@/components/Founder';
+import Team from '@/components/Team';
+import Awards from '@/components/Awards';
 import GlobalPresence from '@/components/GlobalPresence';
 import Testimonials from '@/components/Testimonials';
 import Journal from '@/components/Journal';
@@ -24,6 +26,7 @@ import FAQ from '@/components/FAQ';
 import Pricing from '@/components/Pricing';
 import Newsletter from '@/components/Newsletter';
 import InquiryWizard from '@/components/InquiryWizard';
+import Booking from '@/components/Booking';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
@@ -63,6 +66,8 @@ const Index = () => {
       </div>
       <Philosophy />
       <Founder />
+      <Team />
+      <Awards />
       <GlobalPresence />
       <div id="testimonials">
         <Testimonials />
@@ -76,6 +81,7 @@ const Index = () => {
       </div>
       <Newsletter />
       <InquiryWizard />
+      <Booking />
       <div id="contact">
         <Contact />
       </div>
