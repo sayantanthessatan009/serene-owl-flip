@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import LuxxButton from './LuxxButton';
-import { X, ShieldCheck, CreditCard, Info } from 'lucide-react';
+import { X, CreditCard, Smartphone } from 'lucide-react';
 
 interface PremiumPaymentModalProps {
   isOpen: boolean;
@@ -17,9 +17,9 @@ interface PremiumPaymentModalProps {
 
 const PremiumPaymentModal = ({ isOpen, onClose }: PremiumPaymentModalProps) => {
   const [customerName, setCustomerName] = useState("");
-  const [note, setNote] = useState("Premium Plan Advance Booking - LUXTEXC");
+  const [note, setNote] = useState("Premium Plan Advance - LUXTEXC");
 
-  const paytmLink = `paytmmp://pay?pa=8777319551@paytm&pn=Sayantan%20Acharya&am=8500&cu=INR&tn=${encodeURIComponent(note)}&mc=IN`;
+  const paytmLink = `paytmmp://pay?pa=8777319551&pn=Sayantan%20Acharya&am=8500&cu=INR&tn=${encodeURIComponent(note)}`;
 
   const handlePayment = () => {
     window.location.href = paytmLink;
@@ -33,7 +33,7 @@ const PremiumPaymentModal = ({ isOpen, onClose }: PremiumPaymentModalProps) => {
             <div className="flex justify-between items-center">
               <div>
                 <DialogTitle className="text-2xl font-bold tracking-tight">Premium Plan — Advance Booking</DialogTitle>
-                <p className="text-platinum/40 text-xs mt-2">Full Plan: ₹50,000 | Advance Booking Amount: ₹8,500</p>
+                <p className="text-platinum/40 text-xs mt-2">Full Plan: ₹50,000 | Pay Now: ₹8,500 Advance</p>
               </div>
               <button onClick={onClose} className="text-platinum/40 hover:text-white transition-colors">
                 <X size={24} />
@@ -67,7 +67,7 @@ const PremiumPaymentModal = ({ isOpen, onClose }: PremiumPaymentModalProps) => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm text-platinum/60 ml-1">Note (Optional)</label>
+                <label className="text-sm text-platinum/60 ml-1">Note</label>
                 <input 
                   type="text" 
                   value={note}
@@ -83,20 +83,20 @@ const PremiumPaymentModal = ({ isOpen, onClose }: PremiumPaymentModalProps) => {
                 <span className="font-medium text-platinum">₹8,500</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-platinum/40">Full Plan Value</span>
+                <span className="text-platinum/40">Full Plan</span>
                 <span className="font-medium">₹50,000</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-platinum/40">Remaining after booking</span>
-                <span className="font-medium text-white">₹41,500</span>
+                <span className="text-platinum/40">Remaining</span>
+                <span className="font-medium text-white">₹41,500 due before project start</span>
               </div>
               <div className="flex justify-between text-sm pt-2">
-                <span className="text-platinum/40">To</span>
+                <span className="text-platinum/40">Pay To</span>
                 <span className="font-medium">Sayantan Acharya</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-platinum/40">UPI ID</span>
-                <span className="font-medium">8777319551@paytm</span>
+                <span className="text-platinum/40">Paytm Number</span>
+                <span className="font-medium">+91 8777319551</span>
               </div>
             </div>
 
@@ -105,10 +105,10 @@ const PremiumPaymentModal = ({ isOpen, onClose }: PremiumPaymentModalProps) => {
               Pay Advance via Paytm
             </LuxxButton>
 
-            <div className="flex items-start gap-2 p-4 rounded-xl bg-white/5 border border-white/5">
-              <Info size={14} className="text-platinum/40 mt-0.5" />
-              <p className="text-[10px] text-platinum/40 leading-relaxed">
-                This is an advance booking fee. Remaining ₹41,500 due before project start. Secured Paytm Wallet Payment · India
+            <div className="flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/5">
+              <Smartphone size={16} className="text-platinum/40 mt-0.5 flex-shrink-0" />
+              <p className="text-[10px] text-platinum/40 leading-relaxed uppercase tracking-wider">
+                Open Paytm and send ₹8,500 to mobile number 8777319551 if button doesn't redirect automatically.
               </p>
             </div>
           </div>
