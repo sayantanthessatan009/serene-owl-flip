@@ -20,10 +20,12 @@ import Founder from '@/components/Founder';
 import Team from '@/components/Team';
 import Awards from '@/components/Awards';
 import GlobalPresence from '@/components/GlobalPresence';
-import Testimonials from '@/components/Testimonials';
+import TestimonialCarousel from '@/components/TestimonialCarousel';
 import Journal from '@/components/Journal';
 import FAQ from '@/components/FAQ';
 import Pricing from '@/components/Pricing';
+import ServiceComparison from '@/components/ServiceComparison';
+import ROICalculator from '@/components/ROICalculator';
 import Newsletter from '@/components/Newsletter';
 import InquiryWizard from '@/components/InquiryWizard';
 import Booking from '@/components/Booking';
@@ -69,8 +71,9 @@ const Index = () => {
       <Team />
       <Awards />
       <GlobalPresence />
+      <ROICalculator />
       <div id="testimonials">
-        <Testimonials />
+        <TestimonialCarousel />
       </div>
       <Journal />
       <div id="faq">
@@ -79,6 +82,7 @@ const Index = () => {
       <div id="pricing">
         <Pricing />
       </div>
+      <ServiceComparison />
       <Newsletter />
       <InquiryWizard />
       <Booking />
